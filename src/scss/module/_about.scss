@@ -1,0 +1,53 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.about {
+  position: relative;
+  height: rel.sp-vw(540);
+  background-image: url("@image/about-bg@2x.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-top:rel.sp-vw(80);
+  @include rel.mq(pc){
+    max-width: 1100px;
+    margin: 0 auto;
+    height:610px;
+    margin-top:120px;
+    margin-bottom: -100px;
+  }
+  &__wrapper {
+    background-color: rgba(rel.$white, 0.8);
+    width: rel.sp-vw(345);
+    height: rel.sp-vw(440);
+    padding: rel.sp-vw(50) rel.sp-vw(30);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include rel.mq(pc){
+      width: 590px;
+      height: 390px;
+      padding: 50px 30px;
+    }
+  }
+  &__title {
+    font-size: rel.sp-vw(28);
+    margin-bottom: rel.sp-vw(30);
+    @include rel.mq(pc){
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+  }
+  &__text {
+    font-size: rel.sp-vw(14);
+    letter-spacing: -0.125em;
+    margin-bottom: rel.sp-vw(80);
+    line-height: 2;
+    @include rel.mq(pc){
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+  }
+  &__link {
+    @include rel.cta_button;
+  }
+}

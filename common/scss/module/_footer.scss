@@ -1,0 +1,23 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.footer{
+    background-color: rel.$footerBgColor;
+    width: 100%;
+    height:rel.sp-vw(50);
+    @include rel.mq(pc){
+        height: 50px;
+    }
+    &__wrapper{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__text{
+        color:rel.$white;
+        font-size: rel.sp-vw(10);
+        @include rel.mq(pc){
+            font-size: 16px;
+        }
+    }
+}

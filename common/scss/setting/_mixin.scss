@@ -1,0 +1,36 @@
+@use "./function" as fn;
+@use "./variable" as var;
+/*==================================
+  ブレイクポイント
+====================================*/
+$breakpoint: (
+  sp: "screen and (max-width: 768px)",
+  pc: "screen and (min-width: 769px)",
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+    @content;
+  }
+}
+
+@mixin cta_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var.$white;
+  background-color: var.$black;
+  font-size: fn.sp-vw(11);
+  width: fn.sp-vw(160);
+  height: fn.sp-vw(35);
+  transition: .3s;
+  &:hover{
+    background-color: transparent;
+    color:var.$black;
+  }
+  @include mq(pc){
+    font-size: 12px;
+    width: 160px;
+    height: 35px;
+  }
+}

@@ -1,0 +1,16 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.l-section{
+    padding: rel.sp-vw(40) 0;
+    @include rel.mq(pc){
+        padding: 60px 0;
+    }
+    &__wrapper{
+        max-width: 1130px;
+        margin: 0 auto;
+        padding: 0 rel.sp-vw(15);
+        @include rel.mq(pc){
+            padding: 0 15px;
+        }
+    }
+}

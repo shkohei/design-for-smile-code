@@ -1,0 +1,16 @@
+@use "./relay-setting" as rel;
+
+/*==================================
+  SPまたはPCのみ表示させたい要素に追加
+====================================*/
+@include rel.mq(pc) {
+  .u-sp-only {
+    display: none;
+  }
+}
+
+@include rel.mq(sp) {
+  .u-pc-only {
+    display: none;
+  }
+}

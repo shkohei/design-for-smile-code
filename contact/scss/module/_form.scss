@@ -1,0 +1,130 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.form{
+    font-size: rel.sp-vw(16);
+    @include rel.mq(pc){
+        font-size: 16px;
+    }
+    &__wrapper{
+        max-width: 700px;
+    }
+    &__flex{
+        display: flex;
+        flex-direction: column;
+        gap: rel.sp-vw(30);
+        @include rel.mq(pc){
+            gap: 40px;
+        }
+    }
+    &__radio{
+        &__title{
+            margin-bottom: rel.sp-vw(10);
+            @include rel.mq(pc){
+                margin-bottom: 10px;
+            }
+        }
+        &__label{
+            position: relative;
+            margin-left:rel.sp-vw(25);
+            @include rel.mq(pc){
+                margin-left:25px;
+            }
+            &+&{
+                display: block;
+                margin-top: rel.sp-vw(10);
+                @include rel.mq(pc){
+                    display: inline-block;
+                    margin-top: 0;
+                    margin-left: 50px;
+                }
+            }
+        }
+        &__button{
+            //margin-left:rel.sp-vw(20);
+            &::before,&::after{
+                content:"";
+                position: absolute;
+                top:50%;
+                transform: translate(-50%, -50%);
+                aspect-ratio: 1;
+                border-radius: 50%;
+            }
+            &::before{
+                left:rel.sp-vw(-15);
+                width: rel.sp-vw(18);
+                border:rel.sp-vw(1) solid rel.$textColor;
+                @include rel.mq(pc){
+                    left:-15px;
+                    width:18px;
+                    border:1px solid rel.$textColor;
+                }
+            }
+            &::after{
+                left:rel.sp-vw(-15);
+                width: rel.sp-vw(12);
+                background-color: rel.$textColor;
+                opacity: 0;
+                @include rel.mq(pc){
+                    left:-15px;
+                    width: 12px;
+                }
+            }
+            &:checked{
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__text{
+        &__title{
+            @extend .form__radio__title;
+        }
+        &__info{
+            padding:rel.sp-vw(5);
+            border:1px solid rel.$textColor;
+            width: 100%;
+            &.textarea{
+                height:rel.sp-vw(210);
+                @include rel.mq(pc){
+                    height:210px;
+                }
+            }
+        }
+    }
+    &__submit{
+        &__button{
+            @include rel.cta_button;
+            margin:0 auto;
+            &:disabled {
+                &:hover{
+                    background-color: rel.$black;
+                    color:rel.$white;
+                }
+            }
+        }
+    }
+    &__check{
+        &__label{
+            @extend .form__radio__label;
+            display: flex;
+        }
+        &__box{
+            @extend .form__radio__button;
+            &::before{
+                width: rel.sp-vw(18);
+                border:rel.sp-vw(1) solid rel.$textColor;
+                border-radius: 0;
+                @include rel.mq(pc){
+                    width: 18px;
+                    border:1px solid rel.$textColor;
+                }
+            }
+            &::after{
+                content:"";
+                opacity: 0;
+                border-radius: 0;
+            }
+        }
+    }
+}

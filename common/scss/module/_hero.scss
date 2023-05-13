@@ -1,0 +1,59 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.hero {
+  position: relative;
+  padding-bottom: calc(667 / 375) * 100%;
+  color: rel.$white;
+  @include rel.mq(pc){
+    padding-bottom: calc(740 / 1440) * 100%;
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(287 / 375) * 100%;
+    z-index: 20;
+    opacity: 0;
+    @include rel.mq(pc){
+      width: calc(1100 / 1440) * 100%;
+    }
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: calc(283 / 375) * 100%;
+    background-color: rel.$heroBgColor;
+    z-index: 10;
+    opacity: 0;
+  }
+  &__title {
+    position: absolute;
+    top: calc(175 / 667) * 100%;
+    right: calc(20 / 375) * 100%;
+    z-index: 30;
+    opacity: 0;
+    @include rel.mq(pc){
+      top: calc(182 / 740) * 100%;
+      right: calc(194 / 1440) * 100%;
+    }
+    &--sm {
+      display: inline-block;
+      font-size: rel.sp-vw(16);
+      line-height: 1;
+      @include rel.mq(pc){
+        font-size: rel.pc-vw(20);
+      }
+    }
+    &--lg {
+      display: inline-block;
+      margin-top: rel.sp-vw(10);
+      font-size: rel.sp-vw(56);
+      line-height: 1;
+      @include rel.mq(pc){
+        font-size: rel.pc-vw(72);
+      }
+    }
+  }
+}

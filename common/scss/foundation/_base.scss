@@ -1,0 +1,24 @@
+@use "../setting/relay-common-setting" as rel;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Libre Baskerville', 'Noto Serif JP', serif;
+  color:rel.$textColor;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a{
+  cursor: pointer;
+}

@@ -1,0 +1,56 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.topic{
+    &__title{
+        font-size: rel.sp-vw(28);
+        margin-bottom: rel.sp-vw(30);
+        @include rel.mq(pc){
+            font-size: 32px;
+            margin-bottom: 0;
+        }
+    }
+    &__2column{
+        display: flex;
+        flex-direction: column;
+        @include rel.mq(pc){
+            flex-direction: row;
+        }
+        &__left{
+            flex:0.37;
+        }
+        &__right{
+            flex:0.63;
+            display: flex;
+            flex-direction: column;
+            gap:rel.sp-vw(20);
+            @include rel.mq(pc){
+                gap:30px;
+            }
+        }
+    }
+    &__content{
+        padding-bottom: rel.sp-vw(10);
+        border-bottom: 1px solid #DDDDDD;
+        @include rel.mq(pc){
+            padding-bottom: 10px;
+        }
+        &__time{
+            display: inline-block;
+            font-size: rel.sp-vw(10);
+            margin-bottom: rel.sp-vw(10);
+            @include rel.mq(pc){
+                font-size: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        &__text{
+            font-size: rel.sp-vw(12);
+            @include rel.mq(pc){
+                font-size: 14px;
+            }
+        }
+    }
+    &__link{
+        @include rel.cta_button;
+    }
+}

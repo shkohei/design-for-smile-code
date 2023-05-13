@@ -1,0 +1,46 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.intro {
+  background-color: rel.$sectionBgColor;
+  overflow-x: hidden;
+  @include rel.mq(pc){
+    padding-top:180px;
+  }
+  &__2column {
+    display: flex;
+    flex-direction: column;
+    gap:rel.sp-vw(40);
+    @include rel.mq(pc){
+      flex-direction: row;
+      gap:60px;
+    }
+    &__left,&__right{
+      flex:1;
+    }
+    &__title {
+      font-size: rel.sp-vw(28);
+      @include rel.mq(pc){
+        font-size: 32px;
+      }
+    }
+    &__text{
+      font-size: rel.sp-vw(16);
+      @include rel.mq(pc){
+        font-size: 16px;
+      }
+    }
+    &__image{
+      margin:rel.sp-vw(30) 0;
+      @include rel.mq(pc){
+        margin:30px 0;
+      }
+    }
+    &__button{
+      margin-top:rel.sp-vw(30);
+      @include rel.cta_button;
+      @include rel.mq(pc){
+        margin-top:30px;
+      }
+    }
+  }
+}

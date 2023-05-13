@@ -1,0 +1,36 @@
+@use "/common/scss/setting/relay-common-setting" as rel;
+
+.vision{
+    padding-bottom: rel.sp-vw(120);
+    @include rel.mq(pc){
+        padding:120px 0 200px;
+    }
+    &__title{
+        font-size: rel.sp-vw(32);
+        margin-bottom: rel.sp-vw(30);
+        @include rel.mq(pc){
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+    }
+    &__sub-title{
+        font-size: rel.sp-vw(23);
+        margin-bottom: rel.sp-vw(30);
+        @include rel.mq(pc){
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+    }
+    &__text{
+        font-size: rel.sp-vw(14);
+        @include rel.mq(pc){
+            font-size: 16px;
+        }
+        &+&{
+            margin-top:rel.sp-vw(30);
+            @include rel.mq(pc){
+                margin-top:45px;
+            }
+        }
+    }
+}
